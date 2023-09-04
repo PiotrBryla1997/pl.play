@@ -18,14 +18,13 @@ public class MessageController {
 
         String apiKey = MessageUtils.getApiKeyFromProperties();//Pobieranie klucza API z propertiesów
         ArrayList<Score> scores = new ArrayList<Score>();//Lista wyników testowanych URLi zwrócona przez API google
-   /*     ArrayList<String> listOfUrls = findUrls(message.getContent());//Tworzenie listy z URLi wyszukanych w wiadomości
+        ArrayList<String> listOfUrls = findUrls(message.getContent());//Tworzenie listy z URLi wyszukanych w wiadomości
         for (int i = 0; i < listOfUrls.size(); i++) {//Pętla pobierająca wyniki testów dla każdego z URLi i dodaje je do listy wyników
             Score score = GoogleClient.getScoreForUrl(listOfUrls.get(i), apiKey);
             scores.add(score);
         }
-        boolean isMessageDangerous = MessageService.checkForDangerousLinksInArray(scores);//Sprawdzenie, czy na liście wyników któryś z URLi nie jest niebezpieczny */
+        boolean isMessageDangerous = MessageService.checkForDangerousLinksInArray(scores);//Sprawdzenie, czy na liście wyników któryś z URLi nie jest niebezpieczny
         MessageService.saveMessage(message);//Funkcja zapisująca wiadomość do bazy danych
-        boolean isMessageDangerous = false;
         if(isMessageDangerous) {
             return "Wiadomość może być potencjalnie niebezpieczna";
         } else {
