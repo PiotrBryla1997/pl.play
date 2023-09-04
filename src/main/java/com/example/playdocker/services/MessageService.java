@@ -119,10 +119,8 @@ public class MessageService {
             listOfUrls = findUrls(message.getContent());
         try {//Zapisanie wiadomości do pliku CSV
 
-            FileWriter csvWriter = new FileWriter("wiadomosci.csv", true);
+            FileWriter csvWriter = new FileWriter(filePath, true);
 
-            csvWriter.append(message.getId());
-            csvWriter.append(",");
             csvWriter.append(message.getSenderNumber());
             csvWriter.append(",");
             csvWriter.append(message.getReceiverNumber());

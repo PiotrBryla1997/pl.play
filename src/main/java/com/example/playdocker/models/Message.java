@@ -1,7 +1,6 @@
 package com.example.playdocker.models;
 
 public class Message {
-    private String id;
     private String receiverNumber;//Numer odbiorcy
     private String senderNumber;//Numer nadawcy
     private String content;//Zawartość wiadomości
@@ -30,19 +29,10 @@ public class Message {
         this.receiverNumber = receiverNumber;
     }
 
-    public String getId() {
-        return id;
-    }
-
-    public void setId(String id) {
-        this.id = id;
-    }
-
     public Message() {
     }
 
-    public Message(String id, String receiverNumber, String senderNumber, String content) {
-        this.id = id;
+    public Message(String receiverNumber, String senderNumber, String content) {
         this.receiverNumber = receiverNumber;
         this.senderNumber = senderNumber;
         this.content = content;
